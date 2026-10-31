@@ -1,0 +1,29 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node
+node_modules/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Build and cache
+build/
+dist/
+.next/
+.cache/
+*.log
+
+# System
+.DS_Store
+.idea/
+.vscode/
+# macOS
+.DS_Store

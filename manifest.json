@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "ShadowAI Sentinel",
+  "version": "4.0.0",
+  "description": "Local-first universal browser data-loss prevention and AI prompt security. Scans at submission time, not paste time.",
+  "permissions": [
+    "storage",
+    "downloads"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "ShadowAI Sentinel",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "scanner.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
